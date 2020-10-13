@@ -19,6 +19,7 @@ public class UserBehaviorAnalysisWithSQL {
         env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
         env.setParallelism(1);
 
+
         SingleOutputStreamOperator<UserBehavior> stream = env
                 .readTextFile("D:\\javamaven\\flink-code-java-0421\\src\\main\\resources\\UserBehavior.csv")
                 .map(new MapFunction<String, UserBehavior>() {
